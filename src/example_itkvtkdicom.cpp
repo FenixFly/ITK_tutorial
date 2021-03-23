@@ -15,6 +15,10 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
 
+#include <vtkAutoInit.h>
+VTK_MODULE_INIT(vtkRenderingOpenGL2)
+VTK_MODULE_INIT(vtkInteractionStyle)
+
 typedef signed short PixelType;
 typedef itk::Image< PixelType, 3 > ImageType;
 
@@ -85,11 +89,11 @@ int main(int argc, char ** argv)
 	if (argc > 1)
 		dirName = argv[1];
 
-	// Чтение папки томограмм 
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 	ImageType::Pointer data = readDataArrayFromDICOM(dirName);
 
 
-	// Применение фильтра 
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 	typedef itk::BinaryThresholdImageFilter <ImageType, ImageType>
 		BinaryThresholdImageFilterType;
 
